@@ -1,3 +1,12 @@
+## Pre-requisites
+- GraalVM installed
+    - `sdk install java 22.1.0.r17-grl`
+    - `gu install native-image`
+
+## How to build
+- `./gradlew build`
+- `./gradlew nativeCompile `
+
 ## Micronaut 3.5.3 Documentation
 
 - [User Guide](https://docs.micronaut.io/3.5.3/guide/index.html)

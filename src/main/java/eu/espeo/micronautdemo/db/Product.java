@@ -1,26 +1,15 @@
 package eu.espeo.micronautdemo.db;
 
-import static javax.persistence.GenerationType.IDENTITY;
+import lombok.*;
+import org.hibernate.Hibernate;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-
-import org.hibernate.Hibernate;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "Products")
@@ -43,6 +32,7 @@ public class Product {
 
 	@ManyToMany(mappedBy = "products")
 	@ToString.Exclude
+	@Builder.Default
 	private List<Order> orders = new java.util.ArrayList<>();
 
 	@Override

@@ -3,7 +3,9 @@ package eu.espeo.micronautdemo.rest;
 import java.util.UUID;
 
 import eu.espeo.micronautdemo.domain.Buyer;
+import io.micronaut.core.annotation.Introspected;
 
+@Introspected
 public record BuyerDto(
 		UUID businessId,
 		String firstName,

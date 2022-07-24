@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.UUID;
 
 import eu.espeo.micronautdemo.domain.Order;
+import io.micronaut.core.annotation.Introspected;
 
+@Introspected
 public record FullOrderDto(
 		UUID businessId,
 		ZonedDateTime createTime,

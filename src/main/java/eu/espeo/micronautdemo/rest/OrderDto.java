@@ -9,7 +9,9 @@ import java.util.UUID;
 import eu.espeo.micronautdemo.domain.Buyer;
 import eu.espeo.micronautdemo.domain.Order;
 import eu.espeo.micronautdemo.domain.Product;
+import io.micronaut.core.annotation.Introspected;
 
+@Introspected
 public record OrderDto(
 		UUID businessId,
 		ZonedDateTime createTime,
