@@ -30,7 +30,7 @@ public class ProductController {
 
 	@Get(value = "/{productId}")
 	public ProductDto getProduct(@PathVariable("productId") String productId) {
-		return ProductDto.fromProduct(productService.findById(UUID.fromString(productId)));
+		return ProductDto.fromProduct(productService.findByBusinessId(UUID.fromString(productId)));
 	}
 
 	@Post

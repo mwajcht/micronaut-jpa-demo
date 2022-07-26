@@ -30,7 +30,7 @@ public class OrderController {
 
 	@Get(value = "/{orderId}")
 	public FullOrderDto getOrder(@PathVariable("orderId") String orderId) {
-		return FullOrderDto.fromOrder(orderService.findById(UUID.fromString(orderId)));
+		return FullOrderDto.fromOrder(orderService.findByBusinessId(UUID.fromString(orderId)));
 	}
 
 	@Post

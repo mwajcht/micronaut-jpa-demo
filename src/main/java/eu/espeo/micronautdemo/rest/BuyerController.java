@@ -30,7 +30,7 @@ public class BuyerController {
 
 	@Get(value = "/{buyerId}")
 	public BuyerDto getBuyer(@PathVariable("buyerId") String buyerId) {
-		return BuyerDto.fromBuyer(buyerService.findById(UUID.fromString(buyerId)));
+		return BuyerDto.fromBuyer(buyerService.findByBusinessId(UUID.fromString(buyerId)));
 	}
 
 	@Post

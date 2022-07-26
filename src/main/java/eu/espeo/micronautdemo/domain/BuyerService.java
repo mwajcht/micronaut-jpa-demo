@@ -23,7 +23,7 @@ public class BuyerService {
 	}
 
 
-	public Buyer findById(UUID businessId) {
+	public Buyer findByBusinessId(UUID businessId) {
 		return buyerRepository.findByBusinessId(businessId)
 				.map(eu.espeo.micronautdemo.db.Buyer::toBuyer)
 				.orElseThrow();
