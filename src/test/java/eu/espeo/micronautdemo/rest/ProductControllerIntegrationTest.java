@@ -30,6 +30,6 @@ class ProductControllerIntegrationTest {
         then(product).isNotNull();
         then(product.businessId()).isEqualTo(productBusinessId);
         then(product.name()).isEqualTo(productName);
-        then(product.price()).isEqualTo(price);
+        then(product.price()).isEqualByComparingTo(price);
     }
 }
