@@ -30,9 +30,8 @@ class ProductControllerWebIntegrationTest {
         // when
         var createResponse = client.toBlocking()
                 .exchange(HttpRequest.POST("/products", new ProductDto(productBusinessId, productName, price)));
-        HttpStatus createStatus = createResponse.getStatus();
-        then((CharSequence) createStatus).isEqualTo(HttpStatus.OK);
-        ProductDto product = client.toBlocking()
+        then((CharSequence) createResponse.getStatus()).isEqualTo(HttpStatus.OK);
+        var product = client.toBlocking()
                 .retrieve(HttpRequest.GET("/products/" + productBusinessId), ProductDto.class);
 
         // then
